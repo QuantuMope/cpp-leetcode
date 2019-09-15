@@ -9,9 +9,11 @@
  */
 
  /**
-    Runtime: 136 ms,  Faster than 96.25%
-    Memory : 41.1 MB, Less than 100.00%
- */
+  *  Complexity: O(N) where N is nodes of Tree
+  *
+  *  Runtime: 136 ms,  Faster than 96.25%
+  *  Memory : 41.1 MB, Less than 100.00%
+  */
 class Solution {
 public:
     int rangeSumBST(TreeNode* root, int L, int R) {
@@ -28,15 +30,17 @@ public:
 
 };
 
-/**
-    "Proper" Solution
-    For some reason this code is slower on
-    LeetCode tests, even though it get rids of
-    needless recursive calls.
 
-    Runtime: 152 ms,  Faster than 50.96%
-    Memory : 41  MB,  Less than 100.00%
-*/
+/**
+  *  "Proper" Solution
+  *  For some reason this code is slower on
+  *  LeetCode tests, even though it get rids of
+  *  needless recursive calls.
+  *
+  *  Complexity: O(N) where N is nodes of Tree
+  *  Runtime: 152 ms,  Faster than 50.96%
+  *  Memory : 41  MB,  Less than 100.00%
+  */
  class Solution {
  public:
      int rangeSumBST(TreeNode* root, int L, int R) {

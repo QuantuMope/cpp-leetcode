@@ -26,6 +26,8 @@
 *.a
 *.lib
 
+.idea/
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
