@@ -29,6 +29,10 @@ public:
          * If a value is being swapped with
          * a value that is already a 0 (detected once),
          * then sub with value n+1, and subtract as normal.
+         *
+         * Swap at the ith position until that position
+         * is being swapped with another position
+         * that is already a 0.
          */
         for (int i = 0; i < n; i++) {
             int num = nums[i];
