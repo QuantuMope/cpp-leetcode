@@ -1,5 +1,5 @@
 /**
- *  Complexity: O(N) where N is chars in string S
+ *  Time Complexity: O(N) where N is chars in string S
  *
  *  Runtime: 0 ms,  Faster than 100.0%
  *  Memory : 8.4 MB, Less than 84.62%

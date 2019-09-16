@@ -2,8 +2,8 @@
     Give up memory efficiency for speed
     by using a set data structure.
 
-    Complexity: O(J+S) where J is jewels
-                       and S is stones
+    Time Complexity: O(J+S) where J is jewels
+                            and S is stones
 
     Runtime: 0 ms,   Faster than 100.00%
     Memory : 8.6 MB, Less than 32.50%

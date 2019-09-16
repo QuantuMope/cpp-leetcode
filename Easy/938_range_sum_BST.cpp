@@ -9,7 +9,7 @@
  */
 
  /**
-  *  Complexity: O(N) where N is nodes of Tree
+  *  Time Complexity: O(N) where N is nodes of Tree
   *
   *  Runtime: 136 ms,  Faster than 96.25%
   *  Memory : 41.1 MB, Less than 100.00%
@@ -37,7 +37,8 @@ public:
   *  LeetCode tests, even though it get rids of
   *  needless recursive calls.
   *
-  *  Complexity: O(N) where N is nodes of Tree
+  *  Time Complexity: O(N) where N is nodes of Tree
+  *
   *  Runtime: 152 ms,  Faster than 50.96%
   *  Memory : 41  MB,  Less than 100.00%
   */
