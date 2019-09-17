@@ -8,23 +8,18 @@ class Solution {
 public:
     int minAddToMakeValid(string S) {
 
-        int min_add = 0;
-        int front_paran = 0;
-        int back_paran = 0;
+        int min_add {0};
+        int front_paran {0};
+        int back_paran {0};
 
         for (char paran : S) {
-
-            if (paran == '(') {
-                front_paran++;
-            } else {
-                back_paran++;
-            }
+            if (paran == '(')  front_paran++;
+            else                back_paran++;
 
             // Takes care of cases where ')' is found
             // without a '(' in front of it
             if (paran == ')' && front_paran < back_paran) {
-                back_paran--;
-                min_add++;
+                back_paran--; min_add++;
             }
         }
         // Second term takes care of all remaining '('s
