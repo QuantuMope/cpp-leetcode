@@ -3,6 +3,7 @@
 A repo for LeetCode problems done in C++ for practice.
 
 ***
+Com
 ### Completed Exercises
 #### Easy
 - 448 - [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
@@ -11,5 +12,6 @@ A repo for LeetCode problems done in C++ for practice.
 #### Medium
 - 442 - [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
 - 841 - [Keys and Rooms](https://leetcode.com/problems/keys-and-rooms/)
+- 848 - [Shifting Letters](https://leetcode.com/problems/shifting-letters/)
 - 921 - [Minimum Add to Make Parantheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)
 #### Hard
