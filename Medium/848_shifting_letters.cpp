@@ -1,7 +1,4 @@
 /**
- * Challenge pertains to having a O(N) runtime
- * as well as not using any extra space.
- *
  * Time Complexity: O(N) where N is number of chars in string S
  * Space Complexity: O(1)
  *
