@@ -5,6 +5,7 @@ A repo for LeetCode problems done in C++ for practice.
 ***
 ### Completed Exercises
 #### Easy
+- 448 - [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
 - 771 - [Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)
 - 938 - [Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/)
 #### Medium
