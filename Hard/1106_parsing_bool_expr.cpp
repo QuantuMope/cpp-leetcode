@@ -67,27 +67,27 @@ class Solution {
 public:
 
     string simplifyBool(string input) {
-         int t_det {0};
-         int f_det {0};
+         bool t_det {false};
+         bool f_det {false};
          char op = input[0];
-         string f(input.size(), 'f');
-         string t(input.size(), 't');
          for (auto &c : input) {
-             if (t_det > 0 && f_det > 0) break;
-             if (c == 't') t_det++;
-             else if (c == 'f') f_det++;
+             if (t_det && f_det) break;
+             if (c == 't') t_det = true;
+             else if (c == 'f') f_det = true;
          }
+         if (input.find('t') != string::npos) t_det = true;
+         if (input.find('f') != string::npos) f_det = true;
          // ! Case
-         if (op == '!' && t_det > 0) return f;
-         else if(op == '!') return t;
+         if (op == '!' && t_det) return "f";
+         else if(op == '!') return "t";
 
          // & Case
-         if (op == '&' && f_det > 0) return f;
-         else if (op == '&') return t;
+         if (op == '&' && f_det) return "f";
+         else if (op == '&') return "t";
 
          // | Case
-         if (op == '|' && t_det > 0) return t;
-         else if (op == '|' && t_det == 0) return f;
+         if (op == '|' && t_det) return "t";
+         else if (op == '|') return "f";
 
          return "0";
     }
@@ -103,11 +103,20 @@ public:
             }
             index++;
         }
+        int counter {1};
         for (auto &paran : paran_pos) {
             int start {paran.first-1};
-            int end {paran.second - paran.first+1};
+            int end {paran.second - paran.first + 2};
             expression.replace(start, end,
                                simplifyBool(expression.substr(start, end)));
+            for (int i = counter; i < paran_pos.size(); i++) {
+                if (paran_pos[i].first < start) paran_pos[i].second -= end -1;
+                else {
+                    paran_pos[i].first -= end - 1;
+                    paran_pos[i].second -= end -1;
+                }
+            }
+            counter++;
         }
 
         return expression.find('t') != string::npos;
