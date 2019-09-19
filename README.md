@@ -17,3 +17,4 @@ Com
 - 890 - [Find and Replace Pattern](https://leetcode.com/problems/find-and-replace-pattern/)
 - 921 - [Minimum Add to Make Parantheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)
 #### Hard
+- 1106 - [Parsing A Boolean Expression](https://leetcode.com/problems/parsing-a-boolean-expression/)
