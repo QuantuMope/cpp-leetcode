@@ -11,18 +11,18 @@ using namespace std;
  * 3. number ----> freq  <int, int>
  * Below is my implementation after the hint.
  *
+ * Deleting unused map entries actually significantly
+ * increases memory usage.
+ * Probably due to inefficient creation of map entries
+ * after unnecessary deletion.
+ *
+ * Since using unordered_maps,
  * Time Complexity: O(1) on average
- *                  can be O(N) worse case due to
- *                  map count() calls
+ *
  * Space Complexity: O(P) where P is push entries
  *
- * Poor Memory Usage as shown.
- * The commented out statements actually
- * increase usage. Probably due to in efficient
- * creation of new map entries after deletion.
- *
  * Runtime: 232 ms, Faster than 84.55%
- * Memory: 82.3 MB, Less than 8.33%
+ * Memory: 74.7 MB, Less than 91.67%
  */
 
 /**
@@ -40,27 +40,16 @@ public:
     }
 
     void push(int x) {
-        if (freq.count(x)) freq[x] += 1;
-        else freq.emplace(x, 1);
+        freq[x] += 1;
         int curr_freq = freq[x];
-        if (order.count(curr_freq)) order[curr_freq].emplace(x);
-        else {
-            order.emplace(curr_freq, stack<int>());
-            order[curr_freq].emplace(x);
-        }
-
+        order[curr_freq].push(x);
         if (curr_freq > max_freq) max_freq = curr_freq;
     }
 
     int pop() {
-        int output = order[max_freq].top();
-        order[max_freq].pop();
-        if (order[max_freq].empty()) {
-//            order.erase(max_freq);
-            max_freq--;
-        }
+        int output = order[max_freq].top(); order[max_freq].pop();
+        if (order[max_freq].empty()) max_freq--;
         freq[output] -= 1;
-//        if (freq[output] == 0) freq.erase(output);
         return output;
     }
 };
