@@ -1,6 +1,4 @@
 /**
- * This is a very trivial challenge.
- *
  * Time Complexity: O(N) where N is the number of total nodes
  *                  Faster for cases where integer overflow is not a problem
  *
