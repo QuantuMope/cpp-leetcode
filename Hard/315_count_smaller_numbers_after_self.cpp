@@ -12,10 +12,18 @@ public:
     vector<int> countSmaller(vector<int>& nums) {
         vector<int> counts(nums.size(), 0);
         multiset<int> encountered;
+        multiset<int>::iterator it;
         for (int i = nums.size()-1; i > -1; i--) {
-            encountered.insert(nums[i]);
-            int less = distance(encountered.begin(), encountered.lower_bound(nums[i]));
-            counts[i] += less;
+            it = encountered.upper_bound(nums[i]);
+//            encountered.insert(it, nums[i]);
+//            encountered.insert(nums[i]);
+            if (it != encountered.end()) {
+                encountered.insert(it, nums[i]);
+            } else {
+                encountered.insert(it, nums[i]);
+            }
+//            encountered.insert(nums[i]);
+            counts[i] += distance(encountered.begin(), encountered.lower_bound(nums[i]));
         }
         return counts;
     }
@@ -58,9 +66,9 @@ int main() {
 //    start = clock();
 //    vector<int> output2 = test2.countSmaller(input);
 //    cout << (clock() - start) / (double) CLOCKS_PER_SEC << endl;
-    cout << boolalpha;
-    for (int i = 0; i < output1.size(); i++) {
-        if (output1[i] != output2[i]) cout << "Error";
-    }
+//    cout << boolalpha;
+//    for (int i = 0; i < output1.size(); i++) {
+//        if (output1[i] != output2[i]) cout << "Error";
+//    }
     return 0;
 }
