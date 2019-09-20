@@ -1,13 +1,22 @@
-/**
- * Not completed
- */
-#include <set>
 #include <stack>
 #include <iostream>
-#include <map>
 #include <unordered_map>
-#include <unordered_set>
 using namespace std;
+/**
+ * Time Complexity: O(1) on average
+ *                  can be O(N) worse case due to
+ *                  map count() calls
+ * Space Complexity: O(P) where P is push entries
+ *
+ * Poor Memory Usage as shown.
+ * The commented out statements actually
+ * increase usage. Probably due to in efficient
+ * creation of new map entries after deletion.
+ *
+ * Runtime: 232 ms, Faster than 84.55%
+ * Memory: 82.3 MB, Less than 8.33%
+ */
+
 /**
  * Your FreqStack object will be instantiated and called as such:
  * FreqStack* obj = new FreqStack();
@@ -16,69 +25,40 @@ using namespace std;
  */
 class FreqStack {
 public:
-
-    unordered_map<int, unordered_set<int>> freq;      // freq ----> number
-    unordered_map<int, stack<int>> order;   // number ----> pos
-    unordered_map<int, int> number;         // number ----> freq
-    int pos {0};
-    int max_freq {1};
+    unordered_map<int, stack<int>> order;   // freq ----> pos
+    unordered_map<int, int> freq;         // number ----> freq
+    int max_freq {0};
     FreqStack() {
-
     }
 
     void push(int x) {
-        if (order.count(x)) {
-            order[x].push(pos);
-            freq[number[x]].erase(x);
-            number[x] += 1;
-            if (freq.count(number[x])) freq[number[x]].insert(x);
-            else {
-                unordered_set<int> set_input;
-                set_input.insert(x);
-                freq.insert(pair<int, unordered_set<int>>(number[x], set_input));
-                if (number[x] > max_freq) max_freq = number[x];
-            }
-        }
+        if (freq.count(x)) freq[x] += 1;
+        else freq.emplace(x, 1);
+        int curr_freq = freq[x];
+        if (order.count(curr_freq)) order[curr_freq].emplace(x);
         else {
-            stack<int> stack_input;
-            stack_input.push(pos);
-            order.insert(pair<int, stack<int>>(x, stack_input));
-            number.insert(pair<int, int>(x, 1));
-            if (freq.count(1)) freq[1].insert(x);
-            else {
-                unordered_set<int> set_input;
-                set_input.insert(x);
-                freq.insert(pair<int, unordered_set<int>>(1, set_input));
-            }
+            order.emplace(curr_freq, stack<int>());
+            order[curr_freq].emplace(x);
         }
-        pos++;
+
+        if (curr_freq > max_freq) max_freq = curr_freq;
     }
 
     int pop() {
-        int later_num {0};
-        int later_pos {-1};
-        for (auto &c : freq[max_freq]) {
-            if (order[c].top() > later_pos) {
-                later_pos = order[c].top();
-                later_num = c;
-            }
-        }
-        order[later_num].pop();
-        if (order[later_num].empty()) order.erase(later_num);
-        freq[number[later_num]].erase(later_num);
-        if (freq[number[later_num]].empty()) {
-            freq.erase(number[later_num]);
+        int output = order[max_freq].top();
+        order[max_freq].pop();
+        if (order[max_freq].empty()) {
+//            order.erase(max_freq);
             max_freq--;
         }
-        number[later_num] -= 1;
-        if (number[later_num] != 0) freq[number[later_num]].insert(later_num);
-        else number.erase(later_num);
-        return later_num;
+        freq[output] -= 1;
+//        if (freq[output] == 0) freq.erase(output);
+        return output;
     }
 };
 
 int main() {
-
+    // Output should be 4, 6, 1, 1, 4, 2, 3, 9, 0, 4
     FreqStack test;
     test.push(4);
     test.push(0);
