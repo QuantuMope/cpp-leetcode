@@ -16,6 +16,7 @@ Exercises that I consider *extra easy* are marked as *trivial*.
 - 1108 - [Defanging an IP Address](https://leetcode.com/problems/defanging-an-ip-address/) *trivial*
 #### Medium
 - 2 - [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
+- 347 - [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 - 442 - [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
 - 841 - [Keys and Rooms](https://leetcode.com/problems/keys-and-rooms/)
 - 848 - [Shifting Letters](https://leetcode.com/problems/shifting-letters/)
