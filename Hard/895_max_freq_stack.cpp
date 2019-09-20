@@ -3,6 +3,14 @@
 #include <unordered_map>
 using namespace std;
 /**
+ * Had to look up a hint as to proper map
+ * mappings in order to meet time constraints.
+ * In my own implementation I used three maps:
+ * 1. freq ----> number  <int, unordered_set>
+ * 2. number ----> pos   <int, stack>
+ * 3. number ----> freq  <int, int>
+ * Below is my implementation after the hint.
+ *
  * Time Complexity: O(1) on average
  *                  can be O(N) worse case due to
  *                  map count() calls
