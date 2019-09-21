@@ -9,6 +9,7 @@ Exercises that I consider *extra easy* are marked as *trivial*.
 #### Easy
 - 1 - [Two Sum](https://leetcode.com/problems/two-sum/)
 - 283 - [Move Zeros](https://leetcode.com/problems/move-zeroes/)
+- 389 - [Find the Difference](https://leetcode.com/problems/find-the-difference/)
 - 448 - [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
 - 658 - [Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/) *trivial*
 - 771 - [Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)
