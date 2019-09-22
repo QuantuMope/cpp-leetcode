@@ -15,6 +15,7 @@ Exercises that I consider *extra easy* are marked as *trivial*.
 - 771 - [Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)
 - 917 - [Reverse Only Letters](https://leetcode.com/problems/reverse-only-letters/)
 - 938 - [Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/)
+- 997 - [Find the Town Judge](https://leetcode.com/problems/find-the-town-judge/)
 - 1108 - [Defanging an IP Address](https://leetcode.com/problems/defanging-an-ip-address/) *trivial*
 #### Medium
 - 2 - [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
