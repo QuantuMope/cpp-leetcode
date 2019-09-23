@@ -8,6 +8,7 @@ A repo for LeetCode problems done in C++ for fun/practice.
 Exercises that I consider *extra easy* are marked as *trivial*.
 #### Easy
 - 1 - [Two Sum](https://leetcode.com/problems/two-sum/)
+- 100 - [Same Tree](https://leetcode.com/problems/same-tree/)
 - 283 - [Move Zeros](https://leetcode.com/problems/move-zeroes/)
 - 389 - [Find the Difference](https://leetcode.com/problems/find-the-difference/)
 - 448 - [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
