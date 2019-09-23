@@ -1,9 +1,12 @@
 /**
  * Algorithm would probably be more efficient using
  * a trie data structure but performance seemed
- * satisfactory with an iterative O(N) solution.
+ * satisfactory with a brute force method.
  *
- * Time Complexity: O(N) where N is total entries for sum operation
+ * Time Complexity: O(N*P) where N is total entries and
+ *                         P is length of the prefix for
+ *                         the sum operation
+ *
  *                  O(1) for insert
  *
  * Runtime: 4 ms, Faster than 76.29%
